@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ADAS</string>
+
+    <string name="jaut1">Šodien ieskaite</string>
+    <string name="jaut2">Piecelsies laicīgi</string>
+    <string name="jaut3">Veiksmigi ieradīsies galamērķī</string>
+    <string name="jaut4">Laba pašsajūtas pakāpe</string>
+    <string name="jaut5">Labi laikapstākļi</string>
+    <string name="jaut6">Noderīga lekcija</string>
+    <string name="jaut7">Ir vēlme apmeklēt universitāti</string>
+    <string name="jaut8">Nav papildus darbu</string>
+
+</resources>
