@@ -26,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
     private QuestionAnswe jaut7 = new QuestionAnswe(0.1,0.1);
     private QuestionAnswe jaut8 = new QuestionAnswe(0.1,0.1);
 
+    private Button But1add;
+    private Button But1dec;
+    private Button But2add;
+    private Button But2dec;
+    private Button But3add;
+    private Button But3dec;
+    private Button But4add;
+    private Button But4dec;
+    private Button But5add;
+    private Button But5dec;
+    private Button But6add;
+    private Button But6dec;
+    private Button But7add;
+    private Button But7dec;
+    private Button But8add;
+    private Button But8dec;
+
     private Button buttonRun;
     private TextView TextViewAns;
     private TextView TextViewPKAns;
@@ -56,15 +73,54 @@ public class MainActivity extends AppCompatActivity {
         jaut6.setCheckBox((CheckBox) findViewById(R.id.checkbox6));
         jaut7.setCheckBox((CheckBox) findViewById(R.id.checkbox7));
         jaut8.setCheckBox((CheckBox) findViewById(R.id.checkbox8));
+
+        jaut1.setTextView((TextView) findViewById(R.id.textViewPK1));
+        jaut2.setTextView((TextView) findViewById(R.id.textViewPK2));
+        jaut3.setTextView((TextView) findViewById(R.id.textViewPK3));
+        jaut4.setTextView((TextView) findViewById(R.id.textViewPK4));
+        jaut5.setTextView((TextView) findViewById(R.id.textViewPK5));
+        jaut6.setTextView((TextView) findViewById(R.id.textViewPK6));
+        jaut7.setTextView((TextView) findViewById(R.id.textViewPK7));
+        jaut8.setTextView((TextView) findViewById(R.id.textViewPK8));
+
+        TextViewPK1 = findViewById(R.id.textViewPK1);
+        TextViewPK2 = findViewById(R.id.textViewPK2);
+        TextViewPK3 = findViewById(R.id.textViewPK3);
+        TextViewPK4 = findViewById(R.id.textViewPK4);
+        TextViewPK5 = findViewById(R.id.textViewPK5);
+        TextViewPK6 = findViewById(R.id.textViewPK6);
+        TextViewPK7 = findViewById(R.id.textViewPK7);
+        TextViewPK8 = findViewById(R.id.textViewPK8);
+
+        But1add = findViewById(R.id.buttonInc1);
+        But1dec = findViewById(R.id.buttonDec1);
+        But2add = findViewById(R.id.buttonInc2);
+        But2dec = findViewById(R.id.buttonDec2);
+        But3add = findViewById(R.id.buttonInc3);
+        But3dec = findViewById(R.id.buttonDec3);
+        But4add = findViewById(R.id.buttonInc4);
+        But4dec = findViewById(R.id.buttonDec4);
+        But5add = findViewById(R.id.buttonInc5);
+        But5dec = findViewById(R.id.buttonDec5);
+        But6add = findViewById(R.id.buttonInc6);
+        But6dec = findViewById(R.id.buttonDec6);
+        But7add = findViewById(R.id.buttonInc7);
+        But7dec = findViewById(R.id.buttonDec7);
+        But8add = findViewById(R.id.buttonInc8);
+        But8dec = findViewById(R.id.buttonDec8);
+
+
+
         TextViewAns = findViewById(R.id.Result);
         buttonRun = findViewById(R.id.buttonRun);
 
-        TextViewPK1 = findViewById(R.id.textViewPK1);
         TextViewPKAns = findViewById(R.id.textView1);
 
+//        Pievieno atbildes A sarakstam
         listA.add(ans1);
         listA.add(ans2);
         listA.add(ans3);
+
 
         listQA.add(jaut1);
         listQA.add(jaut2);
@@ -75,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         listQA.add(jaut7);
         listQA.add(jaut8);
 
-//        Ceļu veidošana
+//        Ceļu veidošana (DB zināšanu izveide)
         jaut3.setAnswer(ans1);
 //        jaut2.setRoadT(jaut3);
         jaut1.setRoadT(jaut2);
@@ -102,10 +158,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 QuestionAnswe answe = null;
-                double max = 0.95;
+                double max = 0.99; //robežvērtība
 
                 for(QuestionAnswe qa : listQA) {
                     if(qa.getCheckBox().isChecked()) {
+
                         if(answe == null)
                             answe = qa;
 
@@ -122,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
 //                        TextViewAns.setText (String.valueOf( qa.findRow()));
                     }
                 }
+
+
                 if (answe != null){
 
 //
@@ -133,14 +192,30 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+
+
                 TextViewAns.setText(answe.findAnswer().getAnswer());
-//                TextViewPKAns.setText( answe.findAnswer().getPK());
+                TextViewPKAns.setText(String.valueOf( answe.findAnswer().getPK()));
+
+
 //                TextViewAns.setText (String.valueOf(answe.getAnswerT()));
 
 
             Log.i("Test","Done");
+
+                for(QuestionAnswe qa : listQA) {
+                    qa.getTextView().setText(String.valueOf(qa.getAnswerT()));
+
+                }
+
+
+
             }
+
+
         });
+
+
 
 
 

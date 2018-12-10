@@ -1,8 +1,13 @@
 package eu.alfo.adas;
 
 import android.widget.CheckBox;
+import android.widget.TextView;
+
+
 
 public class QuestionAnswe {
+
+
 
     public QuestionAnswe(double i, double j){
 //        this.checkBox = new CheckBox();
@@ -68,6 +73,7 @@ public class QuestionAnswe {
     private double answerT;
     private double answerF;
     private CheckBox checkBox;
+    private TextView textView;
     private QuestionAnswe roadT;
     private QuestionAnswe roadF;
     private Answer answer;
@@ -132,5 +138,13 @@ public class QuestionAnswe {
 
     public void setCheckBox(CheckBox checkBox) {
         this.checkBox = checkBox;
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
+    public void setTextView(TextView textView) {
+        this.textView = textView;
     }
 }
